@@ -1,15 +1,44 @@
-$(function() {
-	$.get("https://api.coinmarketcap.com/v1/ticker/", function(data, status) {
-	  for (var i = 0; i < data.length - 1; i++) {
-	    if (data[i].id == "litecoin") {
-	      $("#price").html(data[i].price_usd);
-	    }
-	  }
-});
+function predict(link) {
+	var percentGrowth; 
+	var predictedPrice; 
+	var predictedHigh;
+	var predictedLow; 
+	var predictedAverage; 
+	prices = [];
+	$.getJSON(link, function(data) {
+		for(var i = 0; i < data.Data.length; i++) {
+			prices[i] = data.Data[i];
+		}
+		//to get info of certain day, do prices[day].option
+    //option can be: time, close, high, low, open, volumefrom, volumeto
+    	
+    	//calculate percent growth over time
+    	for(var i = 1; i < prices.length; i ++)
+    	{
+    		percentGrowth  += (prices[i].close - prices[i - 1].close) / prices[i -1].close;
+    	}
+    	//calculate average high 
+    	for(var i = 0; i < prices.length; i++)
+    	{
+    		predictedHigh += price[i].high;
+    	}
+    	//calculate average low
+    	for(var i = 0; i < prices.length; i++)
+    	{
+    		predictedLow += price[i].low;
+    	}
 
 
 
+    percentGrowth = percentGrowth / (prices.length - 1); 
+    predictedHigh = predictedHigh / prices.length;
+    predictedLow = predictedLow / prices.length;
+    predictedAverage = (predictedHigh + predictedLow) / 2; 
+    //calculate 
 
-
-});
+    predictedPrice = data.Data[data.Data.length - 1].price * percentGrowth;
+    predictedPrice = (predictedPrice + predictedAverage) / 2;
+    return predictedPrice;
+    });
+}
 
