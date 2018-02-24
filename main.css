@@ -1,11 +1,11 @@
-.pricingdiv{
+.pricing{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   font-family: 'Source Sans Pro', Arial, sans-serif;
 }
 
-.pricingdiv ul.theplan{
+.pricing ul.theplan{
   list-style: none;
   margin: 0;
   padding: 0;
@@ -22,19 +22,19 @@
   transition: all .5s;
 }
 
-.pricingdiv ul.theplan:hover{ /* when mouse hover over pricing table */
+.pricing ul.theplan:hover{ /* when mouse hover over pricing table */
   transform: scale(1.05);
   transition: all .5s;
   z-index: 100;
   box-shadow: 0 0 10px gray;
 }
 
-.pricingdiv ul.theplan li{
+.pricing ul.theplan li{
   margin: 10px 20px;
   position: relative;
 }
 
-.pricingdiv ul.theplan li.title{
+.pricing ul.theplan li.title{
   font-size: 150%;
   font-weight: bold;
   text-align: center;
@@ -43,25 +43,25 @@
   border-bottom: 5px solid white;
 }
 
-.pricingdiv ul.theplan:nth-of-type(2){
+.pricing ul.theplan:nth-of-type(2){
   background: #e53499;
 }
     
-.pricingdiv ul.theplan:nth-of-type(3){
+.pricing ul.theplan:nth-of-type(3){
   background: #2a2cc8;
 }
 
-.pricingdiv ul.theplan:last-of-type{ /* remove right margin in very last table */
+.pricing ul.theplan:last-of-type{ /* remove right margin in very last table */
   margin-right: 0;
 }
 
 /*very last LI within each pricing UL */
-.pricingdiv ul.theplan li:last-of-type{
+.pricing ul.theplan li:last-of-type{
   text-align: center;
   margin-top: auto; /*align last LI (price botton li) to the very bottom of UL */
 }  
 
-.pricingdiv a.pricebutton{
+.pricing a.pricebutton{
   background: white;
   text-decoration: none;
   padding: 10px;
@@ -73,18 +73,36 @@
 }
 
 @media only screen and (max-width: 500px) {
-  .pricingdiv ul.theplan{
+  .pricing ul.theplan{
     border-radius: 0;
     width: 100%;
     margin-right: 0;
   }
   
-  .pricingdiv ul.theplan:hover{
+  .pricing ul.theplan:hover{
     transform: none;
     box-shadow: none;
   }
   
-  .pricingdiv a.pricebutton{
+  .pricing a.pricebutton{
     display: block;
   }
+}
+#searchCoin {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+#searchCoin:focus {
+    width: 100%;
 }
