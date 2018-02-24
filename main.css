@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   justify-content: center;
   font-family: 'Source Sans Pro', Arial, sans-serif;
+  margin-top: 25px;
 }
 
 .pricing ul.theplan{
@@ -90,19 +91,23 @@
 }
 #searchCoin {
     width: 130px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-    background-image: url('searchicon.png');
-    background-position: 10px 10px; 
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
+    box-sizing: border-box!important;
+    border: 2px solid #ccc!important;
+    border-radius: 4px!important;
+    font-size: 16px!important;
+    background-color: white!important;
+    background-image: url('images/searchicon.png')!important;
+    background-position: 10px 10px!important; 
+    background-repeat: no-repeat!important;
+    padding: 12px 20px 12px 40px!important;
+    margin-top: 10px;
+    -webkit-transition: width 0.4s ease-in-out!important;
+    transition: width 0.4s ease-in-out!important;
+}
+.expand {
+  width: 75%!important;
 }
 
-#searchCoin:focus {
-    width: 100%;
+#sign_in, #sign_up {
+  display: none;
 }
