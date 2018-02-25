@@ -7,7 +7,8 @@
     [ Validate ]*/
     var input = $('.validate-input .input100');
 
-    $('.validate-form').on('submit',function(){
+    $('.validate-form').on('submit',function(e){
+        e.preventDefault();
         var check = true;
 
         for(var i=0; i<input.length; i++) {
@@ -16,7 +17,6 @@
                 check=false;
             }
         }
-
         return check;
     });
 
@@ -31,6 +31,14 @@
         if($(input).attr('type') == 'email' || $(input).attr('name') == 'email') {
             if($(input).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
                 return false;
+            } else {
+                $("#incorrect").hide()
+                if($("#sign_in").is(":visible")) {
+                    sign_in($("#sign_in_username").val(), $("#sign_in_password").val());
+                } else {
+                    sign_up($("#sign_up_username").val(), $("#sign_up_password").val());
+                }
+
             }
         }
         else {
