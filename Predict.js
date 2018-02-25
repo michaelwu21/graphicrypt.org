@@ -1,4 +1,4 @@
-function predict(link) {
+function predict(link, element) {
 	var percentGrowth = 0; 
 	var predictedPrice = 0; 
 	var predictedHigh = 0;
@@ -40,8 +40,10 @@ function predict(link) {
 
     predictedPrice = data.Data[prices.length - 1].close * (1+percentGrowth);
     predictedPrice = (predictedPrice + predictedAverage) / 2;
-    console.log(predictedPrice);
+    element = "#" + element;
+    //something like $(element).addgraph() <-- or whatever the function is to display graph
     return predictedPrice;
+		
     });
 }
 
